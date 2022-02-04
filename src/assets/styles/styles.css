@@ -1,6 +1,10 @@
 /**
 * invert generator with targetted color : https://codepen.io/sosuke/pen/Pjoqqp
 **/
+.container {
+  min-height: calc(100vh - 70px - 64px);
+  padding: 24px;
+}
 
 .pink-icon {
   filter: invert(47%) sepia(12%) saturate(3489%) hue-rotate(316deg)
@@ -16,4 +20,7 @@
 }
 .info {
   padding: 5px 0;
+}
+.info .anticon {
+  margin-right: 5px;
 }
