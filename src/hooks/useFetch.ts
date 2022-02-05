@@ -13,8 +13,6 @@ const useFetch = (url: string, options?: any) => {
         const res = await fetch(url, options);
         const json = await res.json();
 
-        console.log('json', json);
-
         setResponse(json);
       } catch (error: any) {
         setError(error);
@@ -24,7 +22,9 @@ const useFetch = (url: string, options?: any) => {
     };
 
     fetchData();
-  }, []);
+
+    return () => {}
+  }, [url]);
 
   return { response, error, isLoading };
 };

@@ -19,7 +19,7 @@ const HomePage = () => {
           />
         )}
         {response && (
-          <Row gutter={[16, 16]}>
+          <Row gutter={[16, 16]} data-testid="items-container">
             {response.map((item: ItemProps, itemId: number) => (
               <Item {...item} key={itemId} />
             ))}

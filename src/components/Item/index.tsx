@@ -16,7 +16,15 @@ const Item: FC<ItemProps> = (props) => {
   const { username, name, email, phone, website } = props;
 
   return (
-    <Col lg={6} xs={24} md={8} sm={12} className="gutter-row" span={6}>
+    <Col
+      lg={6}
+      xs={24}
+      md={8}
+      sm={12}
+      className="gutter-row"
+      span={6}
+      data-testid={`row-item-${props.id}`}
+    >
       <Card
         cover={
           <img
@@ -31,15 +39,21 @@ const Item: FC<ItemProps> = (props) => {
         ]}
       >
         <Meta title={name} className="card-meta" />
-        <Text ellipsis className="info">
-          <MailOutlined key="email" /> {email}
-        </Text>
-        <Text ellipsis className="info">
-          <PhoneOutlined key="email" /> {phone}
-        </Text>
-        <Text ellipsis className="info">
-          <GlobalOutlined key="email" /> {website}
-        </Text>
+        <div>
+          <Text ellipsis className="info">
+            <MailOutlined key="email" /> {email}
+          </Text>
+        </div>
+        <div>
+          <Text ellipsis className="info">
+            <PhoneOutlined key="email" /> {phone}
+          </Text>
+        </div>
+        <div>
+          <Text ellipsis className="info">
+            <GlobalOutlined key="email" /> {website}
+          </Text>
+        </div>
       </Card>
     </Col>
   );

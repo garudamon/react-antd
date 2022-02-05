@@ -1,9 +1,9 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, waitFor } from "@testing-library/react";
+import App, { DOC_TITLE } from "./App";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe('application render successfully', () => {
+  it("the app should be render and have the correct title", async () => {
+    render(<App />);
+    await waitFor(() => expect(document.title).toEqual(DOC_TITLE));
+  });
+})
